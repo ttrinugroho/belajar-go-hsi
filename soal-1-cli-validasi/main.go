@@ -26,7 +26,7 @@ func isValid(name, age string) (string, error) {
 	if err != nil {
 		return "", fmt.Errorf("%w", ErrorInt)
 	}
-	if a <= 18 {
+	if a < 18 {
 		return "", fmt.Errorf("%w", ErrMinAge)
 	}
 	return name, nil
