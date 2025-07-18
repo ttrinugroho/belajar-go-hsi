@@ -42,7 +42,7 @@ func isValid(e, a string) error {
 	if err != nil {
 		messages = append(messages, "umur kosong")
 		messages = append(messages, "bukan angka")
-	} else if age <= 18 {
+	} else if age < 18 {
 		messages = append(messages, "umur kurang dari 18 tahun")
 	}
 
