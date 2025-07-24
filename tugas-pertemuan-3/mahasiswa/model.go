@@ -19,7 +19,6 @@ func (m *Mahasiswa) GetUmur() int {
 }
 
 func (m *Mahasiswa) RataRata() float64 {
-	m.nilainAvg = hitungRataRata(m.Nilai...)
 	return m.nilainAvg
 }
 

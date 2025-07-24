@@ -14,9 +14,10 @@ func hitungRataRata(nilai ...int) float64 {
 
 func BuatMahasiswa(nama string, umur int, nilai ...int) *Mahasiswa {
 	return &Mahasiswa{
-		Nama:  nama,
-		umur:  umur,
-		Nilai: nilai,
+		Nama:      nama,
+		umur:      umur,
+		Nilai:     nilai,
+		nilainAvg: hitungRataRata(nilai...),
 	}
 }
 
