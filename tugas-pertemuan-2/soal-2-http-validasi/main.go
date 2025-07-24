@@ -55,7 +55,10 @@ func isValid(e, a string) error {
 }
 
 func weResponse(w http.ResponseWriter, res any) {
-	json.NewEncoder(w).Encode(res)
+	err := json.NewEncoder(w).Encode(res)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -77,5 +80,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/validate", handler)
 	fmt.Println("server http:localhost:8080")
-	http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		panic(err)
+	}
 }
